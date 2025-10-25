@@ -37,8 +37,8 @@ A comprehensive AI-powered meeting preparation system that leverages multiple sp
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/portfolio-projects.git
-   cd portfolio-projects/ai_meeting_agent
+   git clone https://github.com/rchhabra13/ai_meeting_agent.git
+   cd ai_meeting_agent
    ```
 
 2. **Install dependencies**
