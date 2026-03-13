@@ -1,332 +1,153 @@
-# 📝 AI Meeting Preparation Agent
+# AI Meeting Preparation Agent
 
-A comprehensive AI-powered meeting preparation system that leverages multiple specialized agents to create detailed meeting materials, conduct research, and provide strategic insights. This system combines OpenAI's GPT-4, Anthropic's Claude, and web search capabilities to deliver thorough meeting preparation.
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## 🌟 Features
+A comprehensive AI-powered meeting preparation system leveraging CrewAI and Claude to analyze company context, research industry trends, develop meeting strategies, and create executive briefings.
 
-### Multi-Agent Meeting Preparation
-- **Context Analyst Agent**: Analyzes meeting context and participants
-- **Industry Research Agent**: Conducts deep research on relevant topics
-- **Strategy Development Agent**: Creates meeting strategies and talking points
-- **Executive Briefing Agent**: Generates comprehensive executive summaries
-- **Follow-up Planning Agent**: Plans post-meeting actions and next steps
+## Description
 
-### Comprehensive Research Capabilities
-- **Web Search Integration**: Real-time web research using Serper API
-- **Industry Analysis**: Deep dive into industry trends and competitors
-- **Participant Research**: Background research on meeting attendees
-- **Topic Analysis**: Comprehensive analysis of meeting topics
-- **Market Intelligence**: Current market conditions and insights
+The AI Meeting Preparation Agent is a multi-agent system that automates comprehensive meeting preparation. It coordinates specialized AI agents to handle context analysis, industry research, strategy development, and executive briefing creation, significantly reducing preparation time while improving meeting effectiveness.
 
-### Meeting Material Generation
-- **Executive Briefings**: Detailed pre-meeting briefings
-- **Talking Points**: Strategic talking points and key messages
-- **Agenda Development**: Structured meeting agendas
-- **Background Research**: Comprehensive topic research
-- **Action Items**: Pre and post-meeting action planning
+## Features
 
-## 🚀 Getting Started
+- **Multi-Agent Coordination**: Four specialized agents working collaboratively
+- **Context Analysis**: Deep analysis of company background and meeting context
+- **Industry Research**: Real-time market and competitor intelligence
+- **Strategy Development**: Customized meeting agendas and talking points
+- **Executive Briefings**: Comprehensive pre-meeting preparation packages
+- **Real-time Progress Tracking**: Visual feedback on agent activities
+- **Markdown Formatting**: Well-structured, professional output
 
-### Prerequisites
+## Architecture
+
+```
+User Input (Meeting Details)
+        ↓
+    ┌───────────────────────────┐
+    │  Context Analyzer Agent   │ (Research company background)
+    └───────────┬───────────────┘
+                ↓
+    ┌───────────────────────────┐
+    │  Industry Expert Agent    │ (Analyze market trends)
+    └───────────┬───────────────┘
+                ↓
+    ┌───────────────────────────┐
+    │  Meeting Strategist Agent │ (Develop strategy & agenda)
+    └───────────┬───────────────┘
+                ↓
+    ┌──────────────────────────┐
+    │ Communication Specialist │ (Create executive brief)
+    └──────────┬───────────────┘
+               ↓
+         Output (Brief)
+```
+
+## Prerequisites
+
 - Python 3.8 or higher
-- OpenAI API key
-- Anthropic API key
-- Serper API key
+- Anthropic API key (Claude)
+- Serper API key (web search)
 
-### Installation
+## Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/rchhabra13/ai_meeting_agent.git
-   cd ai_meeting_agent
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set up API keys**
-   ```bash
-   export OPENAI_API_KEY="your-openai-api-key-here"
-   export ANTHROPIC_API_KEY="your-anthropic-api-key-here"
-   export SERPER_API_KEY="your-serper-api-key-here"
-   ```
-
-4. **Run the application**
-   ```bash
-   streamlit run meeting_agent.py
-   ```
-
-5. **Access the application**
-   - Open your browser to `http://localhost:8501`
-   - Enter your meeting details
-   - Generate comprehensive meeting materials
-
-## 💡 Usage Examples
-
-### Sales Meeting Preparation
-```
-"Prepare for a sales meeting with Acme Corp. We're pitching our new AI platform. The meeting is with their CTO and VP of Engineering. Focus on technical benefits and ROI."
-```
-
-### Board Meeting Preparation
-```
-"I need to prepare for a board meeting where we're discussing Q3 results and planning for Q4. Include market analysis and competitive landscape."
-```
-
-### Client Consultation
-```
-"Prepare for a consultation with a healthcare client about implementing our patient management system. Include compliance requirements and industry best practices."
-```
-
-### Partnership Discussion
-```
-"Prepare for a partnership discussion with TechStart Inc. We're exploring a strategic alliance. Include their company background and potential synergies."
-```
-
-## 🛠️ Technical Architecture
-
-### Core Technologies
-- **Framework**: Agno AI Agent Framework
-- **Language Models**: OpenAI GPT-4o and Anthropic Claude
-- **Web Search**: Serper API
-- **UI**: Streamlit
-- **Storage**: SQLite for meeting history
-
-### Agent Specializations
-
-#### Context Analyst Agent
-- Meeting type analysis
-- Participant background research
-- Objective identification
-- Stakeholder mapping
-- Context understanding
-
-#### Industry Research Agent
-- Market trend analysis
-- Competitive landscape research
-- Industry news and developments
-- Regulatory changes
-- Best practices research
-
-#### Strategy Development Agent
-- Meeting strategy creation
-- Key message development
-- Talking point generation
-- Risk assessment
-- Success metrics definition
-
-#### Executive Briefing Agent
-- Executive summary creation
-- Key insights compilation
-- Recommendation development
-- Risk analysis
-- Action item prioritization
-
-#### Follow-up Planning Agent
-- Post-meeting action planning
-- Next steps definition
-- Timeline creation
-- Responsibility assignment
-- Success tracking
-
-## 📊 Meeting Types Supported
-
-### Business Meetings
-- **Sales Presentations**: Client pitches and product demos
-- **Board Meetings**: Executive presentations and strategic planning
-- **Team Meetings**: Internal coordination and planning
-- **Client Consultations**: Advisory and consulting sessions
-- **Partnership Discussions**: Strategic alliance negotiations
-
-### Technical Meetings
-- **Product Reviews**: Technical product discussions
-- **Architecture Planning**: System design and implementation
-- **Code Reviews**: Development team meetings
-- **Security Audits**: Compliance and security discussions
-- **Performance Reviews**: System optimization meetings
-
-### Strategic Meetings
-- **Planning Sessions**: Strategic planning and roadmapping
-- **Budget Reviews**: Financial planning and allocation
-- **Market Analysis**: Competitive and market research
-- **Risk Assessment**: Risk management and mitigation
-- **Innovation Planning**: R&D and innovation strategy
-
-## 🔧 Configuration
-
-### Environment Variables
+1. Clone the repository:
 ```bash
-OPENAI_API_KEY=your-openai-api-key
-ANTHROPIC_API_KEY=your-anthropic-api-key
-SERPER_API_KEY=your-serper-api-key
+git clone https://github.com/rchhabra13/ai_meeting_agent.git
+cd ai_meeting_agent
 ```
 
-### Customization Options
-- Meeting type preferences
-- Research depth settings
-- Output format preferences
-- Language and tone settings
-- Industry-specific templates
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-## 📈 Performance Features
+3. Create a `.env` file:
+```bash
+touch .env
+```
 
-- **Parallel Processing**: Multiple agents work simultaneously
-- **Real-time Research**: Live web search and data gathering
-- **Intelligent Caching**: Efficient data storage and retrieval
-- **Progress Tracking**: Visual progress indicators
-- **Quality Assurance**: Automated content validation
+## Configuration
 
-## 📋 Meeting Preparation Workflow
+Create a `.env.example` file in the root directory:
 
-### 1. Input Phase
-- Meeting details collection
-- Participant information
-- Objectives definition
-- Timeline specification
+```
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+SERPER_API_KEY=your_serper_api_key_here
+```
 
-### 2. Research Phase
-- Background research on participants
-- Industry and market analysis
-- Topic-specific research
-- Competitive intelligence gathering
+## Usage
 
-### 3. Analysis Phase
-- Context analysis and understanding
-- Strategy development
-- Risk assessment
-- Opportunity identification
+1. Start the Streamlit app:
+```bash
+streamlit run meeting_agent.py
+```
 
-### 4. Material Generation
-- Executive briefing creation
-- Talking points development
-- Agenda structuring
-- Action item planning
+2. Open your browser to `http://localhost:8501`
 
-### 5. Review and Refinement
-- Content review and validation
-- Quality assurance
-- Final formatting
-- Delivery preparation
+3. Enter your API keys in the sidebar
 
-## 🎯 Output Formats
+4. Provide meeting details:
+   - Company name
+   - Meeting objective
+   - Attendees and their roles
+   - Meeting duration
+   - Specific focus areas
 
-### Executive Briefings
-- **Executive Summary**: High-level overview
-- **Key Insights**: Critical information and findings
-- **Recommendations**: Strategic recommendations
-- **Risk Analysis**: Potential risks and mitigation
-- **Action Items**: Specific next steps
+5. Click "Prepare Meeting" to generate comprehensive materials
 
-### Meeting Materials
-- **Agenda**: Structured meeting agenda
-- **Talking Points**: Key discussion points
-- **Background Research**: Comprehensive topic research
-- **Participant Profiles**: Attendee background information
-- **Industry Analysis**: Market and competitive insights
+## API Configuration
 
-### Follow-up Materials
-- **Action Items**: Post-meeting tasks and responsibilities
-- **Timeline**: Implementation schedule
-- **Success Metrics**: Measurement criteria
-- **Next Steps**: Future meeting planning
-- **Documentation**: Meeting notes and outcomes
+### Anthropic API
+- Visit: https://console.anthropic.com
+- Create an API key
+- Add to `.env` as `ANTHROPIC_API_KEY`
 
-## 🔒 Security & Privacy
+### Serper API
+- Visit: https://serper.dev
+- Sign up and create an API key
+- Add to `.env` as `SERPER_API_KEY`
 
-- **Data Encryption**: All meeting data encrypted in transit and at rest
-- **API Security**: Secure API key management
-- **Privacy Compliance**: Follows data privacy best practices
-- **Access Control**: Secure user authentication and authorization
+## Output
 
-## 🤝 Contributing
+The system generates:
 
-We welcome contributions from meeting professionals and AI enthusiasts:
+- **Executive Summary**: High-level meeting overview with objectives and key attendees
+- **Company Analysis**: Recent news, products, competitors, and market position
+- **Industry Insights**: Market trends, competitive landscape, opportunities and threats
+- **Meeting Strategy**: Time-boxed agenda with talking points and speaker assignments
+- **Q&A Preparation**: Anticipated questions with strategic responses
+- **Next Steps**: Actionable recommendations and implementation timeline
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+## Technologies Used
 
-### Areas for Contribution
-- New meeting type templates
-- Additional research sources
-- Improved output formats
-- Better integration capabilities
-- Performance optimizations
+- **CrewAI**: Multi-agent orchestration framework
+- **Claude 3.5 Sonnet**: Language model for analysis and synthesis
+- **Serper API**: Real-time web search capability
+- **Streamlit**: Web application interface
+- **Python 3.8+**: Core programming language
 
-## 📝 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🆘 Support
+## Author
 
-For support and questions:
-- Create an issue in the GitHub repository
-- Check the documentation
-- Join our community discussions
-- Review the FAQ section
+Rishi Chhabra ([@rchhabra13](https://github.com/rchhabra13))
 
-## 🔮 Roadmap
+## Support
 
+For issues, questions, or suggestions:
+- Open an issue on GitHub
+- Check existing documentation
+- Review usage examples
+
+## Roadmap
+
+- [ ] Meeting outcome tracking
+- [ ] Historical meeting analysis
+- [ ] Participant briefing materials
+- [ ] Post-meeting analysis and follow-up generation
+- [ ] Multi-language support
 - [ ] Calendar integration
 - [ ] Video conferencing integration
-- [ ] Real-time collaboration features
-- [ ] Advanced analytics and insights
-- [ ] Mobile app development
-- [ ] Voice interface support
-- [ ] Multi-language support
-- [ ] Advanced AI model integration
-
-## 📊 Success Metrics
-
-### Meeting Effectiveness
-- **Preparation Time**: Reduced meeting prep time by 70%
-- **Meeting Quality**: Improved meeting outcomes and decisions
-- **Participant Engagement**: Higher engagement and participation
-- **Follow-up Success**: Better post-meeting action completion
-
-### Research Quality
-- **Accuracy**: 95% accuracy in research findings
-- **Completeness**: Comprehensive coverage of topics
-- **Relevance**: Highly relevant and actionable insights
-- **Timeliness**: Real-time and up-to-date information
-
-## 🙏 Acknowledgments
-
-- OpenAI for the GPT-4o language model
-- Anthropic for the Claude language model
-- Serper for web search capabilities
-- Agno framework for agent orchestration
-- Streamlit for the user interface
-
----
-
-**Note**: This system is designed to assist with meeting preparation and should be used as a tool to enhance human decision-making, not replace it.
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
-
-<!-- Updated: 2025-09-16 -->
